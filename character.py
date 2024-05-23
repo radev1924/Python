@@ -1,7 +1,6 @@
 from weapon import fists
 from healthbar import HealthBar
 
-
 class Character:
 
     def __init__(self, name: str, health: int) -> None:
@@ -18,11 +17,10 @@ class Character:
 
 class Hero(Character):
         def __init__(self, name: str, health: int) -> None:
-            super().__init__(name=name, health=health)
-
+            super().__init__(name=name, health=health)          
             self.default_weapon = self.weapon
             self.health_bar = HealthBar(self, color="blue")
-        
+
         def equip(self, weapon) -> None:
             self.weapon = weapon
             print(f"{self.name} equipped a(n) {self.weapon.name}")

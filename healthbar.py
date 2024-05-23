@@ -17,17 +17,16 @@ class HealthBar:
                     "grey": "\033[90m",
                     "black": "\033[90m",
                     "default": "\033[99m"
-}
+                    }
 
 def __init__(self, entity, length: int = 20, is_colored: bool = True, color: str = "") -> None:
-        
-    self.entity = entity
-    self.length = length
-    self.max_value = entity.health_max
-    self.current_value = entity.health 
+        self.entity = entity
+        self.length = length
+        self.max_value = entity.health_max
+        self.current_value = entity.health
 
-    self.is_colored = is_colored
-    self.color = self.colors.get(color) or self.colors["default"]
+        self.is_colored = is_colored
+        self.color = self.colors.get(color) or self.colors["default"]
 
 def update(self) -> None:
     self.current_value = self.entity.health
